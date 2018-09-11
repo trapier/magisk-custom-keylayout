@@ -41,7 +41,7 @@ LATESTARTSERVICE=false
 
 print_modname() {
   ui_print "*******************************"
-  ui_print "     Magisk Module Template    "
+  ui_print "     Magisk Custom Keylayout   "
   ui_print "*******************************"
 }
 
@@ -59,7 +59,7 @@ REPLACE="
 /system/priv-app/Settings
 /system/framework
 "
-
+g
 # Construct your own list here, it will override the example above
 # !DO NOT! remove this if you don't need to replace anything, leave it empty as it is now
 REPLACE="
@@ -85,6 +85,7 @@ set_permissions() {
 
   # The following is default permissions, DO NOT remove
   set_perm_recursive  $MODPATH  0  0  0755  0644
+#  set_perm  $MODPATH/system/usr/keylayout/Vendor_1915_Product_0196.kl 0 0 644 
 }
 
 ##########################################################################################

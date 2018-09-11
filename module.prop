@@ -1,7 +1,7 @@
-id=template
-name=Template Module
+id=CustomKeylayout
+name=Custom keylayout
 version=v1
 versionCode=1
-author=topjohnwu
-description=A short description
+author=yeawellwhatev
+description=Adds keylayout to /system/usr/keylayout
 minMagisk=17000
