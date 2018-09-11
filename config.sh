@@ -85,7 +85,6 @@ set_permissions() {
 
   # The following is default permissions, DO NOT remove
   set_perm_recursive  $MODPATH  0  0  0755  0644
-#  set_perm  $MODPATH/system/usr/keylayout/Vendor_1915_Product_0196.kl 0 0 644 
 }
 
 ##########################################################################################
@@ -97,4 +96,18 @@ set_permissions() {
 # update-binary. Refrain from adding code directly into update-binary, as it will make it
 # difficult for you to migrate your modules to newer template versions.
 # Make update-binary as clean as possible, try to only do function calls in it.
+
+copy_kl() {
+	ui_print ""
+	f=$(find /external_sd/ /sdcard/ -type f -iname '*.kl' 2>/dev/null)
+	[ -z "$f" ] && ui_print "No *.kl found in /sdcard/ or /external_sd/" && exit 1
+	[ -n "$f" ] && ui_print "Found" && ui_print "$f" && mkdir -p "$MODPATH/system/usr/keylayout" && (for i in $f; do cp "$i" "$MODPATH/system/usr/keylayout";done)
+	ui_print ""
+	ui_print "Keylayouts installed: "
+	ui_print "$(ls $MODPATH/system/usr/keylayout)"
+	ui_print ""
+}
+
+
+		
 
