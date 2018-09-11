@@ -1,7 +1,7 @@
 id=CustomKeylayout
-name=Custom keylayout
+name=Custom Keylayout
 version=v1
 versionCode=1
 author=yeawellwhatev
-description=Adds keylayout to /system/usr/keylayout
+description=Adds your own keylayout to /system/usr/keylayout systemless-ly
 minMagisk=17000
